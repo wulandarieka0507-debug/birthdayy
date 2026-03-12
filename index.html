@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Birthday Surprise</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#02042a;
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* background bintang */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+animation:moveStars 60s linear infinite;
+z-index:-1;
+}
+
+@keyframes moveStars{
+from{background-position:0 0;}
+to{background-position:1000px 1000px;}
+}
+
+/* halaman pembuka */
+
+.start{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.start h1{
+font-family:'Great Vibes',cursive;
+font-size:60px;
+}
+
+.start button{
+padding:15px 40px;
+font-size:20px;
+border:none;
+border-radius:30px;
+background:#ff4da6;
+color:white;
+cursor:pointer;
+box-shadow:0 0 20px pink;
+}
+
+/* container */
+
+.container{
+display:none;
+padding:40px;
+max-width:900px;
+margin:auto;
+}
+
+h1{
+font-family:'Great Vibes',cursive;
+font-size:55px;
+}
+
+/* foto utama */
+
+.photo{
+width:200px;
+height:200px;
+border-radius:50%;
+overflow:hidden;
+margin:auto;
+border:5px solid white;
+box-shadow:0 0 30px white;
+}
+
+.photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* kue animasi */
+
+.cake{
+font-size:70px;
+margin-top:20px;
+animation:float 3s infinite ease-in-out;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
+}
+
+/* pesan */
+
+.message{
+margin-top:20px;
+font-size:18px;
+}
+
+/* tombol lagu */
+
+.music{
+margin-top:25px;
+}
+
+.music a{
+background:#ff4da6;
+padding:10px 20px;
+border-radius:20px;
+color:white;
+text-decoration:none;
+}
+
+/* galeri polaroid */
+
+.polaroid-gallery{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.polaroid{
+background:white;
+padding:10px 10px 25px 10px;
+width:200px;
+box-shadow:0 10px 20px rgba(0,0,0,0.4);
+transform:rotate(-3deg);
+transition:0.3s;
+}
+
+.polaroid img{
+width:100%;
+display:block;
+}
+
+.polaroid p{
+color:black;
+font-family:'Great Vibes',cursive;
+font-size:22px;
+margin-top:10px;
+}
+
+.polaroid:nth-child(2){
+transform:rotate(4deg);
+}
+
+.polaroid:nth-child(3){
+transform:rotate(-6deg);
+}
+
+.polaroid:hover{
+transform:scale(1.1) rotate(0deg);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<!-- halaman awal -->
+
+<div class="start">
+<h1>🎁 Birthday Surprise</h1>
+<button onclick="openSurprise()">Open</button>
+</div>
+
+<!-- halaman utama -->
+
+<div class="container" id="content">
+
+<h1>Happy Birthday Belva 🎉</h1>
+
+<div class="photo">
+<img src="foto.png.jpeg">
+</div>
+
+<div class="cake">🎂</div>
+
+<p id="text1" class="message"></p>
+<p id="text2" class="message"></p>
+<p id="text3" class="message"></p>
+<p id="text4" class="message"></p>
+<p id="text5" class="message"></p>
+
+<div class="music">
+<a href="https://youtu.be/OT5msu-dap8?si=SYgAbn78TE3ULTgk" target="_blank">
+▶ Play Our Song
+</a>
+</div>
+
+<h2> 📸</h2>
+
+<div class="polaroid-gallery">
+
+<div class="polaroid">
+<img src="foto1.png.jpeg">
+<p>17th</p>
+</div>
+
+<div class="polaroid">
+<img src="foto2.png.jpeg">
+<p>Best Day</p>
+</div>
+
+<div class="polaroid">
+<img src="foto3.png.jpeg">
+<p>For You</p>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function openSurprise(){
+
+document.querySelector(".start").style.display="none";
+document.querySelector(".container").style.display="block";
+
+setTimeout(()=>{
+document.getElementById("text1").innerHTML=
+"HAPPY BIRTHDAYYY BELVAAA";
+},1000);
+
+setTimeout(()=>{
+document.getElementById("text2").innerHTML=
+"Selamatt menjalani masa masa remaja 17 tahunnnn yeayy!!";
+},3500);
+
+setTimeout(()=>{
+document.getElementById("text3").innerHTML=
+"Semoga hal hal baik selalu menyertaimu dan kamu selalu dikelilingi orang orang yang baik sama kamu.";
+},6500);
+
+setTimeout(()=>{
+document.getElementById("text4").innerHTML=
+"Kamuuu jugaa harus jadi orang yang baikk jugaaa yaaa!!";
+},9500);
+
+setTimeout(()=>{
+document.getElementById("text5").innerHTML=
+"And you should be grateful and proud of yourself, you have lived 17 years of life!! May you live long and always grow well!!";
+},12500);
+
+}
+
+</script>
+
+</body>
+</html>
+```
